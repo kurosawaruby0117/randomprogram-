@@ -12,11 +12,13 @@ listbox=Listbox(root,selectmode=EXTENDED)
 listbox_yougot=Listbox(root,selectmode=EXTENDED)
 root.title("Rinachan Lots")
 root.geometry("700x700")
+root.resizable(0,0)
 keys={}
 yougots={}
 def download():
     if len(keys)==0:
         messagebox.showwarning("error!", "please input value more than 1.")
+        return
     f = asksaveasfile(mode='w', defaultextension=".txt")
     if f is None:  # asksaveasfile return `None` if dialog closed with "cancel".
         return
